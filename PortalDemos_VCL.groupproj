@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{17955DD4-397F-4990-90DB-8B718F86974E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Demos\Clients\RtcHost.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\Clients\RtcControl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\Gateway\RtcGateway.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\Gateway\RtcGateway_ISAPI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\Clients\RtcViewer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RtcHost">
+        <MSBuild Projects="Demos\Clients\RtcHost.dproj"/>
+    </Target>
+    <Target Name="RtcHost:Clean">
+        <MSBuild Projects="Demos\Clients\RtcHost.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtcHost:Make">
+        <MSBuild Projects="Demos\Clients\RtcHost.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtcControl">
+        <MSBuild Projects="Demos\Clients\RtcControl.dproj"/>
+    </Target>
+    <Target Name="RtcControl:Clean">
+        <MSBuild Projects="Demos\Clients\RtcControl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtcControl:Make">
+        <MSBuild Projects="Demos\Clients\RtcControl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtcGateway">
+        <MSBuild Projects="Demos\Gateway\RtcGateway.dproj"/>
+    </Target>
+    <Target Name="RtcGateway:Clean">
+        <MSBuild Projects="Demos\Gateway\RtcGateway.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtcGateway:Make">
+        <MSBuild Projects="Demos\Gateway\RtcGateway.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtcGateway_ISAPI">
+        <MSBuild Projects="Demos\Gateway\RtcGateway_ISAPI.dproj"/>
+    </Target>
+    <Target Name="RtcGateway_ISAPI:Clean">
+        <MSBuild Projects="Demos\Gateway\RtcGateway_ISAPI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtcGateway_ISAPI:Make">
+        <MSBuild Projects="Demos\Gateway\RtcGateway_ISAPI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RtcViewer">
+        <MSBuild Projects="Demos\Clients\RtcViewer.dproj"/>
+    </Target>
+    <Target Name="RtcViewer:Clean">
+        <MSBuild Projects="Demos\Clients\RtcViewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RtcViewer:Make">
+        <MSBuild Projects="Demos\Clients\RtcViewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RtcHost;RtcControl;RtcGateway;RtcGateway_ISAPI;RtcViewer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RtcHost:Clean;RtcControl:Clean;RtcGateway:Clean;RtcGateway_ISAPI:Clean;RtcViewer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RtcHost:Make;RtcControl:Make;RtcGateway:Make;RtcGateway_ISAPI:Make;RtcViewer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,38 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = RTCGateChatClient.exe RTCGateChatClient2.exe RTCGateChatClient3.exe \
+  RTCGateChatServer.exe RTCSimpleGateway.exe RTCGateTestClient.exe RTCGateNode.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+RTCGateChatClient.exe: GateChatClient\RTCGateChatClient.dpr
+  $(DCC)
+
+RTCGateChatClient2.exe: GateChatClient\RTCGateChatClient2.dpr
+  $(DCC)
+
+RTCGateChatClient3.exe: GateChatClient\RTCGateChatClient3.dpr
+  $(DCC)
+
+RTCGateChatServer.exe: GateChatServer\RTCGateChatServer.dpr
+  $(DCC)
+
+RTCSimpleGateway.exe: GatewayTest\RTCSimpleGateway.dpr
+  $(DCC)
+
+RTCGateTestClient.exe: GatewayTest\RTCGateTestClient.dpr
+  $(DCC)
+
+RTCGateNode.exe: GatewayNode\RTCGateNode.dpr
+  $(DCC)
+

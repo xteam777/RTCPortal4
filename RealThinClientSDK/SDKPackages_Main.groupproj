@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C8C9E99A-14AB-43ED-B0D5-C2D50FC02E8C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Lib\rtcSDK.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\rtcSDKD.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="rtcSDK">
+        <MSBuild Projects="Lib\rtcSDK.dproj"/>
+    </Target>
+    <Target Name="rtcSDK:Clean">
+        <MSBuild Projects="Lib\rtcSDK.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rtcSDK:Make">
+        <MSBuild Projects="Lib\rtcSDK.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="rtcSDKD">
+        <MSBuild Projects="Lib\rtcSDKD.dproj"/>
+    </Target>
+    <Target Name="rtcSDKD:Clean">
+        <MSBuild Projects="Lib\rtcSDKD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rtcSDKD:Make">
+        <MSBuild Projects="Lib\rtcSDKD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="rtcSDK;rtcSDKD"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="rtcSDK:Clean;rtcSDKD:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="rtcSDK:Make;rtcSDKD:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

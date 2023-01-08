@@ -1,0 +1,47 @@
+RTC Portal + RTC SDK Lite
+http://www.realthinclient.com
+
+Copyright (c) 2003-2013 RealThinClient components
+All Rights reserved.
+
+Use in source code form and redistribution in compiled binary form, with or without 
+modification, is permitted royalty free, provided that the following conditions are met:
+
+1) Redistributions in compiled binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation and/or other 
+materials provided with the distribution.
+
+2) Licensed components can be installed and used from multiple IDEs on any number of 
+machines owned and exclusively used by the license holder. Backup copies can also be
+created on any number of PCs exclusively used by the license holder, but may NOT be 
+redistributed or made available to anyone who does not own a RTC Portal License.
+
+3) Neither the name of the Author, RealThinClient components nor the names of its 
+contributors may be used to endorse or promote products created with this software 
+without specific prior written permission.
+
+4) You may use this product to support your customers. You may extend your Products 
+with remote support functionality in order to make your customer support easier.
+
+5) You may NOT use this product to create general-purpose remote assistance, support, 
+maintenance or presentation tools. This limitation applies to commercial and 
+non-commercial distributions of such tools (versions for sale and/or free download).
+
+You may not propagate, distribute or modify a covered work except as expressly provided 
+under this License. Any attempt otherwise to propagate, distribute or modify it is void, and 
+will automatically terminate your rights under this License. This License and the rights granted 
+hereunder will terminate automatically if you fail to comply with terms herein and fail to cure 
+such breach within 7 days of becoming aware of the breach. Provisions which, by their nature, 
+must remain in effect beyond the termination of this License shall survive.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGE.
