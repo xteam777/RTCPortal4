@@ -15,8 +15,8 @@ uses
   SysUtils,
   Clipbrd,
   Registry,
+  rtcSystem,
 
-  memBinList,
   rtcLog,
   rtcInfo,
   rtcWinLogon;

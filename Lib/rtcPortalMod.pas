@@ -10,7 +10,7 @@ interface
 uses
   SysUtils, Classes,
 
-  rtcFastStrings, rtcLog, SyncObjs, rtcInfo;
+  rtcLog, SyncObjs, rtcInfo;
 
 const
   // Version of the RTC PORTAL components

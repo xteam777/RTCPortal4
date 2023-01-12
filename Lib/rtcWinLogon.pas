@@ -18,10 +18,8 @@ uses
   SysUtils,
 
 {$IFDEF RTC_LBFIX}
-  rtcTSCli,
+  rtcTSCli;
 {$ENDIF RTC_LBFIX}
-
-  rtcFastStrings;
 
 const
   DESKTOP_ALL = DESKTOP_CREATEMENU or DESKTOP_CREATEWINDOW or

@@ -14,7 +14,7 @@ uses
 {$ELSE}
   FileCtrl,
 {$ENDIF}
-  rtcLog, rtcSyncObjs, rtcInfo,
+  rtcLog, rtcInfo,
 
   rtcpFileTrans;
 

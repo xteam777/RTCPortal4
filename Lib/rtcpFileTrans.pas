@@ -12,7 +12,7 @@ uses
 {$IFNDEF IDE_1} Variants, {$ELSE} FileCtrl, {$ENDIF}
   ShellAPI,
 
-  rtcLog, SyncObjs,
+  rtcLog, SyncObjs,  rtcSystem,
   rtcInfo, rtcPortalMod,
   rtcpFileUtils;
 
@@ -666,8 +666,8 @@ begin
     for i := 0 to UIs.Count - 1 do
     begin
       x := UIs.FieldName[i];
-      if UIs.asBoolean[x] and assigned(UIs.Obj[x]) then
-        TRtcAbsPFileTransferUI(UIs.Obj[x]).Module := nil;
+      if UIs.asBoolean[x] and assigned(UIs.asPtr[x]) then
+        TRtcAbsPFileTransferUI(UIs.asPtr[x]).Module := nil;
     end;
     UIs.Clear;
   finally
@@ -691,11 +691,11 @@ begin
   CSUI.Acquire;
   try
     if UIs.asBoolean[UI.UserName] then
-      if assigned(UIs.Obj[UI.UserName]) and (UIs.Obj[UI.UserName] <> UI) then
-        TRtcAbsPFileTransferUI(UIs.Obj[UI.UserName]).Module := nil;
+      if assigned(UIs.asPtr[UI.UserName]) and (UIs.asPtr[UI.UserName] <> UI) then
+        TRtcAbsPFileTransferUI(UIs.asPtr[UI.UserName]).Module := nil;
 
     UIs.asBoolean[UI.UserName] := True;
-    UIs.Obj[UI.UserName] := UI;
+    UIs.asPtr[UI.UserName] := UI;
   finally
     CSUI.Release;
   end;
@@ -706,7 +706,7 @@ begin
   CSUI.Acquire;
   try
     UIs.asBoolean[UI.UserName] := False;
-    UIs.Obj[UI.UserName] := nil;
+    UIs.asPtr[UI.UserName] := nil;
   finally
     CSUI.Release;
   end;
@@ -1908,7 +1908,7 @@ function TRtcPFileTransfer.LockUI(const UserName: String)
 begin
   CSUI.Acquire;
   try
-    Result := TRtcAbsPFileTransferUI(UIs.Obj[UserName]);
+    Result := TRtcAbsPFileTransferUI(UIs.asPtr[UserName]);
     if assigned(Result) then
       Result.Locked := Result.Locked + 1;
   finally

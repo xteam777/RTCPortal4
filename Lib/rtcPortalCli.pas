@@ -11,9 +11,7 @@ uses
   SysUtils, Classes,
   Windows, ComObj, ActiveX,
 
-  memObjList,
-
-  rtcLog, rtcFastStrings, SyncObjs,
+  rtcLog, SyncObjs, rtcSystem,
   rtcZLib, rtcInfo, rtcConn,
   rtcFunction, rtcDataCli, rtcCliModule,
 

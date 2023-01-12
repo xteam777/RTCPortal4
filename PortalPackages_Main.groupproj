@@ -3,9 +3,6 @@
         <ProjectGuid>{62F82EBC-DD09-43F1-9AF1-87707B46C345}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="LibSDK\rtcSDK.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="Lib\rtcPortal.dproj">
             <Dependencies/>
         </Projects>
@@ -17,15 +14,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="rtcSDK">
-        <MSBuild Projects="LibSDK\rtcSDK.dproj"/>
-    </Target>
-    <Target Name="rtcSDK:Clean">
-        <MSBuild Projects="LibSDK\rtcSDK.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="rtcSDK:Make">
-        <MSBuild Projects="LibSDK\rtcSDK.dproj" Targets="Make"/>
-    </Target>
     <Target Name="rtcPortal">
         <MSBuild Projects="Lib\rtcPortal.dproj"/>
     </Target>
@@ -36,13 +24,13 @@
         <MSBuild Projects="Lib\rtcPortal.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="rtcSDK;rtcPortal"/>
+        <CallTarget Targets="rtcPortal"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="rtcSDK:Clean;rtcPortal:Clean"/>
+        <CallTarget Targets="rtcPortal:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="rtcSDK:Make;rtcPortal:Make"/>
+        <CallTarget Targets="rtcPortal:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

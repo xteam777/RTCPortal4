@@ -17,7 +17,7 @@ uses
 
   rtcLog,
 
-  rtcSyncObjs, rtcFunction, rtcInfo,
+  rtcFunction, rtcInfo, rtcSystem,
   rtcConn, rtcDataSrv, rtcSrvModule;
 
 const
@@ -1568,7 +1568,7 @@ function TRtcPortalGateway.SetWakePut(const user: string; Call: TRtcDelayedCall)
   begin
   CS.Acquire;
   try
-    WakesPut.Obj[user]:=nil;
+    WakesPut.asPtr[user]:=nil;
     if WakesPut.asBoolean[user] or // somebody is already waking us up
        not MessPutDirect.asBoolean[user] then // nothing there to wait for
       begin
@@ -1579,7 +1579,7 @@ function TRtcPortalGateway.SetWakePut(const user: string; Call: TRtcDelayedCall)
     else
       begin
       Result:=True;
-      WakesPut.Obj[user]:=Call;
+      WakesPut.asPtr[user]:=Call;
       end;
   finally
     CS.Release;
@@ -1590,7 +1590,7 @@ function TRtcPortalGateway.SetWakeGet(const user: string; Call: TRtcDelayedCall)
   begin
   CS.Acquire;
   try
-    WakesGet.Obj[user]:=nil;
+    WakesGet.asPtr[user]:=nil;
     if WakesGet.asBoolean[user] then
       begin
       Result:=False;
@@ -1600,7 +1600,7 @@ function TRtcPortalGateway.SetWakeGet(const user: string; Call: TRtcDelayedCall)
     else
       begin
       Result:=True;
-      WakesGet.Obj[user]:=Call;
+      WakesGet.asPtr[user]:=Call;
       end;
   finally
     CS.Release;
@@ -1611,7 +1611,7 @@ procedure TRtcPortalGateway.ClearWakePut(const user: string);
   begin
   CS.Acquire;
   try
-    WakesPut.Obj[user]:=nil;
+    WakesPut.asPtr[user]:=nil;
     WakesPut.isNull[user]:=True;
   finally
     CS.Release;
@@ -1622,7 +1622,7 @@ procedure TRtcPortalGateway.ClearWakeGet(const user: string);
   begin
   CS.Acquire;
   try
-    WakesGet.Obj[user]:=nil;
+    WakesGet.asPtr[user]:=nil;
     WakesGet.isNull[user]:=True;
   finally
     CS.Release;
@@ -1635,11 +1635,11 @@ procedure TRtcPortalGateway.WakePut(const user: string);
   begin
   CS.Acquire;
   try
-    Call:=TRtcDelayedCall(WakesPut.Obj[user]);
+    Call:=TRtcDelayedCall(WakesPut.asPtr[user]);
     WakesPut.asBoolean[user]:=True;
     WakesPut.asBoolean[user]:=True;
     if assigned(Call) then
-      WakesPut.Obj[user]:=nil;
+      WakesPut.asPtr[user]:=nil;
   finally
     CS.Release;
     end;
@@ -1653,11 +1653,11 @@ procedure TRtcPortalGateway.WakeGet(const user: string);
   begin
   CS.Acquire;
   try
-    Call:=TRtcDelayedCall(WakesGet.Obj[user]);
+    Call:=TRtcDelayedCall(WakesGet.asPtr[user]);
     WakesGet.asBoolean[user]:=True;
     WakesGet.asBoolean[user]:=True;
     if assigned(Call) then
-      WakesGet.Obj[user]:=nil;
+      WakesGet.asPtr[user]:=nil;
   finally
     CS.Release;
     end;

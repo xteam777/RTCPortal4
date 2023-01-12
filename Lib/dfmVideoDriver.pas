@@ -18,7 +18,7 @@ interface
 
 uses
   Windows, Classes, Registry, SysUtils,
-  rtcCompress, rtcInfo, Forms, rtcLog;
+  rtcCompress, rtcInfo, Forms, rtcLog, rtcSystem;
 
 const
   MAX_SCREEN_WIDTH = 16384;

@@ -305,8 +305,8 @@ begin
     for i := 0 to UIs.Count - 1 do
     begin
       x := UIs.FieldName[i];
-      if UIs.asBoolean[x] and assigned(UIs.Obj[x]) then
-        TRtcAbsPChatUI(UIs.Obj[x]).Module := nil;
+      if UIs.asBoolean[x] and assigned(UIs.asPtr[x]) then
+        TRtcAbsPChatUI(UIs.asPtr[x]).Module := nil;
     end;
     UIs.Clear;
   finally
@@ -601,11 +601,11 @@ begin
   CSUI.Acquire;
   try
     if UIs.asBoolean[UI.UserName] then
-      if assigned(UIs.Obj[UI.UserName]) and (UIs.Obj[UI.UserName] <> UI) then
-        TRtcAbsPChatUI(UIs.Obj[UI.UserName]).Module := nil;
+      if assigned(UIs.asPtr[UI.UserName]) and (UIs.asPtr[UI.UserName] <> UI) then
+        TRtcAbsPChatUI(UIs.asPtr[UI.UserName]).Module := nil;
 
     UIs.asBoolean[UI.UserName] := True;
-    UIs.Obj[UI.UserName] := UI;
+    UIs.asPtr[UI.UserName] := UI;
   finally
     CSUI.Release;
   end;
@@ -616,7 +616,7 @@ begin
   CSUI.Acquire;
   try
     UIs.asBoolean[UI.UserName] := False;
-    UIs.Obj[UI.UserName] := nil;
+    UIs.asPtr[UI.UserName] := nil;
   finally
     CSUI.Release;
   end;
@@ -626,7 +626,7 @@ function TRtcPChat.LockUI(const UserName: String): TRtcAbsPChatUI;
 begin
   CSUI.Acquire;
   try
-    Result := TRtcAbsPChatUI(UIs.Obj[UserName]);
+    Result := TRtcAbsPChatUI(UIs.asPtr[UserName]);
     if assigned(Result) then
       Result.Locked := Result.Locked + 1;
   finally

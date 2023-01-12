@@ -12,7 +12,7 @@ uses
 {$IFNDEF IDE_1}
   Variants,
 {$ENDIF}
-  rtcLog, rtcSyncObjs,
+  rtcLog,
   rtcInfo, rtcpChat;
 
 type

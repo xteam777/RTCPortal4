@@ -358,8 +358,8 @@ begin
     for i := 0 to UIs.Count - 1 do
     begin
       X := UIs.FieldName[i];
-      if UIs.asBoolean[X] and assigned(UIs.Obj[X]) then
-        TRtcAbsPDesktopControlUI(UIs.Obj[X]).Module := nil;
+      if UIs.asBoolean[X] and assigned(UIs.asPtr[X]) then
+        TRtcAbsPDesktopControlUI(UIs.asPtr[X]).Module := nil;
     end;
     UIs.Clear;
   finally
@@ -588,11 +588,11 @@ begin
   CSUI.Acquire;
   try
     if UIs.asBoolean[UI.UserName] then
-      if assigned(UIs.Obj[UI.UserName]) and (UIs.Obj[UI.UserName] <> UI) then
-        TRtcAbsPDesktopControlUI(UIs.Obj[UI.UserName]).Module := nil;
+      if assigned(UIs.asPtr[UI.UserName]) and (UIs.asPtr[UI.UserName] <> UI) then
+        TRtcAbsPDesktopControlUI(UIs.asPtr[UI.UserName]).Module := nil;
 
     UIs.asBoolean[UI.UserName] := True;
-    UIs.Obj[UI.UserName] := UI;
+    UIs.asPtr[UI.UserName] := UI;
   finally
     CSUI.Release;
   end;
@@ -603,7 +603,7 @@ begin
   CSUI.Acquire;
   try
     UIs.asBoolean[UI.UserName] := False;
-    UIs.Obj[UI.UserName] := nil;
+    UIs.asPtr[UI.UserName] := nil;
   finally
     CSUI.Release;
   end;
@@ -614,7 +614,7 @@ function TRtcPDesktopControl.LockUI(const UserName: String)
 begin
   CSUI.Acquire;
   try
-    Result := TRtcAbsPDesktopControlUI(UIs.Obj[UserName]);
+    Result := TRtcAbsPDesktopControlUI(UIs.asPtr[UserName]);
     if assigned(Result) then
       Result.Locked := Result.Locked + 1;
   finally
