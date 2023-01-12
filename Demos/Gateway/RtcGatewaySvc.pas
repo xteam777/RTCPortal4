@@ -12,10 +12,10 @@ uses
   Graphics, Controls, SvcMgr, Dialogs,
 
   rtcLog, rtcInfo, rtcCrypt,
-  rtcThrPool, rtcHWndPool,
+  rtcThrPool,
 
   rtcSrvModule, rtcPortalGate,
-  rtcDataSrv, rtcConn, rtcHttpSrv;
+  rtcDataSrv, rtcConn, rtcHttpSrv, rtcSystem;
 
 const
   RTC_GATEWAYSERVICE_NAME='Rtc_GatewayService';

@@ -17,14 +17,14 @@ uses
 {$ENDIF}
 
   rtcLog, rtcCrypt,
-  rtcThrPool, rtcHWndPool,
+  rtcThrPool,
   rtcSrvModule, rtcPortalGate,
   rtcDataSrv, rtcHttpSrv,
   rtcInfo, rtcConn,
 
   rtcGatewaySvc,
 
-  jpeg, ComCtrls, Buttons;
+  jpeg, ComCtrls, Buttons, rtcSystem;
 
 const
   WM_TASKBAREVENT = WM_USER + 1;

@@ -42,8 +42,6 @@ object MainForm: TMainForm
         Left = 0
         Top = 0
         Caption = 'PageStart'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object TPage
         Left = 0
@@ -62,6 +60,10 @@ object MainForm: TMainForm
       TabStop = False
       object Page_Setup: TTabSheet
         Caption = 'Setup'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Label12: TLabel
           Left = 16
           Top = 178
@@ -370,6 +372,10 @@ object MainForm: TMainForm
       object Page_Control: TTabSheet
         Caption = 'Control'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         DesignSize = (
           271
           338)
@@ -790,7 +796,6 @@ object MainForm: TMainForm
     DataEncrypt = 16
     DataForceEncrypt = True
     RetryOtherCalls = 5
-    IsService = False
     MultiThreaded = True
     Gate_Timeout = 300
     OnStatusGet = PClientStatusGet
@@ -814,7 +819,6 @@ object MainForm: TMainForm
   object PDesktopControl: TRtcPDesktopControl
     Client = PClient
     OnNewUI = PDesktopControlNewUI
-    SendShortkuts = True
     Left = 100
     Top = 392
   end

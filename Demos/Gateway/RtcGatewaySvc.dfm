@@ -5,8 +5,6 @@ object Rtc_GatewayService: TRtc_GatewayService
   OnShutdown = ServiceShutdown
   OnStart = ServiceStart
   OnStop = ServiceStop
-  Left = 213
-  Top = 121
   Height = 180
   Width = 305
   object HttpServer: TRtcHttpServer

@@ -30,8 +30,7 @@ uses
   rdSetHost in '..\Modules\rdSetHost.pas' {rdHostSettings},
   rdDesktopView in '..\Modules\rdDesktopView.pas' {rdDesktopViewer},
   rdDesktopSave in '..\Modules\rdDesktopSave.pas' {rdDesktopSaver: TDataModule},
-  rdFileBrowse in '..\Modules\rdFileBrowse.pas' {rdFileBrowser},
-  rtcScrCapture in '..\..\Lib\rtcScrCapture.pas';
+  rdFileBrowse in '..\Modules\rdFileBrowse.pas' {rdFileBrowser};
 
 //{$R rtcportaluac.res rtcportaluac.rc}
 {$R *.res}

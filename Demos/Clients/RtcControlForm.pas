@@ -17,7 +17,7 @@ uses
   UITypes,
 {$ENDIF}
 
-  rtcThrPool, rtcHwndPool,
+  rtcThrPool,
   rtcLog, rtcCrypt, rtcInfo, rtcConn,
   rtcDataCli, rtcHttpCli,
 
@@ -29,7 +29,7 @@ uses
   rdFileTrans, dmSetRegion,
 {$ENDIF}
 
-  rdSetClient,
+  rdSetClient, rtcSystem,
   rdDesktopView, rdChat,
 
   rtcpDesktopConst,

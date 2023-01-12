@@ -498,6 +498,10 @@ object MainForm: TMainForm
       object Page_Hosting: TTabSheet
         Caption = 'Hosting'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Label9: TLabel
           Left = 36
           Top = 8

@@ -20,7 +20,7 @@ object MainForm: TMainForm
   ShowHint = True
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  PixelsPerInch = 120
+  PixelsPerInch = 96
   TextHeight = 14
   object pMaster: TPanel
     Left = 0
@@ -40,6 +40,10 @@ object MainForm: TMainForm
       TabStop = False
       object Page_Setup: TTabSheet
         Caption = 'Setup'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Label2: TLabel
           Left = 12
           Top = 152
@@ -392,6 +396,10 @@ object MainForm: TMainForm
       object Page_Active: TTabSheet
         Caption = 'Active'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Label5: TLabel
           Left = 8
           Top = 10
