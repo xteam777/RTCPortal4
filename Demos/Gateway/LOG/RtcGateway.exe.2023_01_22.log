@@ -1,0 +1,424 @@
+2023-01-22 10:26:17.573; msi2 [127.0.0.1]: Logout check
+2023-01-22 10:26:17.573; msi2: Logging out
+2023-01-22 10:26:17.573; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 10:26:17.573; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 10:26:20.404; msi [127.0.0.1]: Logout check
+2023-01-22 10:26:20.405; msi: Logging out
+2023-01-22 10:26:20.405; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 10:26:20.405; msi [127.0.0.1]: (GET) User logged out
+2023-01-22 19:49:56.203; msi [127.0.0.1]: Login check
+2023-01-22 19:49:56.203; msi [127.0.0.1]: LOGGED IN
+2023-01-22 19:49:56.233; msi [127.0.0.1]: Login check
+2023-01-22 19:49:56.233; msi [127.0.0.1]: HOST START
+2023-01-22 19:50:17.391; msi2 [127.0.0.1]: Login check
+2023-01-22 19:50:17.392; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 19:50:17.400; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 19:50:30.672; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 19:50:31.254; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 19:50:31.375; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 19:50:31.376; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 19:51:00.169; msi [127.0.0.1]: Closed "desk" for Control <msi2>
+2023-01-22 19:51:08.013; msi2 [127.0.0.1]: Logout check
+2023-01-22 19:51:08.014; msi2: Logging out
+2023-01-22 19:51:08.014; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 19:51:08.014; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 19:51:09.654; msi [127.0.0.1]: Logout check
+2023-01-22 19:51:09.654; msi: Logging out
+2023-01-22 19:51:09.654; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 19:51:09.654; msi [127.0.0.1]: (GET) User logged out
+2023-01-22 19:51:49.254; msi [127.0.0.1]: Login check
+2023-01-22 19:51:49.255; msi [127.0.0.1]: LOGGED IN
+2023-01-22 19:51:49.258; msi [127.0.0.1]: Login check
+2023-01-22 19:51:49.264; msi [127.0.0.1]: HOST START
+2023-01-22 19:51:53.838; msi2 [127.0.0.1]: Login check
+2023-01-22 19:51:53.838; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 19:51:53.847; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 19:51:57.144; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 19:51:57.690; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 19:51:57.837; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 19:51:57.838; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 19:52:00.098; msi [127.0.0.1]: Closed "desk" for Control <msi2>
+2023-01-22 19:52:02.902; msi2 [127.0.0.1]: Logout check
+2023-01-22 19:52:02.902; msi2: Logging out
+2023-01-22 19:52:02.902; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 19:52:02.902; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 19:52:07.277; msi [127.0.0.1]: Logout check
+2023-01-22 19:52:07.278; msi: Logging out
+2023-01-22 19:52:07.278; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 19:52:07.278; msi [127.0.0.1]: (GET) User logged out
+2023-01-22 19:53:11.966; msi [127.0.0.1]: Login check
+2023-01-22 19:53:11.967; msi [127.0.0.1]: LOGGED IN
+2023-01-22 19:53:11.970; msi [127.0.0.1]: Login check
+2023-01-22 19:53:11.975; msi [127.0.0.1]: HOST START
+2023-01-22 19:53:17.515; msi2 [127.0.0.1]: Login check
+2023-01-22 19:53:17.515; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 19:53:17.522; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 19:53:19.695; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 19:53:20.226; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 19:53:20.335; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 19:53:20.335; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 19:53:22.388; msi [127.0.0.1]: Closed "desk" for Control <msi2>
+2023-01-22 19:55:49.176; msi [127.0.0.1]: Logout check
+2023-01-22 19:55:49.177; msi: Logging out
+2023-01-22 19:55:49.177; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 19:55:49.177; msi [127.0.0.1]: (GET) User logged out
+2023-01-22 19:55:52.440; msi2 [127.0.0.1]: Logout check
+2023-01-22 19:55:52.440; msi2: Logging out
+2023-01-22 19:55:52.440; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 19:55:52.440; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 19:56:30.030; msi [127.0.0.1]: Login check
+2023-01-22 19:56:30.030; msi [127.0.0.1]: LOGGED IN
+2023-01-22 19:56:30.033; msi [127.0.0.1]: Login check
+2023-01-22 19:56:30.039; msi [127.0.0.1]: HOST START
+2023-01-22 19:56:36.024; msi2 [127.0.0.1]: Login check
+2023-01-22 19:56:36.024; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 19:56:36.024; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 19:56:38.118; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 19:57:23.608; msi [127.0.0.1]: Logout check
+2023-01-22 19:57:23.608; msi: Logging out
+2023-01-22 19:57:23.608; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 20:18:31.541; msi2: Session expired
+2023-01-22 20:18:31.541; msi2: 1 Sessions left
+2023-01-22 20:18:31.542; msi: Session expired
+2023-01-22 20:18:31.542; msi2: Session expired
+2023-01-22 20:18:31.542; msi2: Logging out
+2023-01-22 20:18:31.543; msi2: LOGGED OUT
+2023-01-22 20:18:31.544; msi [127.0.0.1]: Login check
+2023-01-22 20:18:31.544; msi [127.0.0.1]: LOGGED IN
+2023-01-22 20:18:31.547; msi [127.0.0.1]: Login check
+2023-01-22 20:18:31.551; msi [127.0.0.1]: HOST START
+2023-01-22 20:18:50.775; msi2 [127.0.0.1]: Login check
+2023-01-22 20:18:50.775; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 20:18:50.790; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 20:18:52.484; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 20:53:16.429; msi2: Session expired
+2023-01-22 20:53:16.429; msi2: 1 Sessions left
+2023-01-22 20:53:16.429; msi: Session expired
+2023-01-22 20:53:16.429; msi: 1 Sessions left
+2023-01-22 20:53:16.429; msi: Session expired
+2023-01-22 20:53:16.429; msi: Logging out
+2023-01-22 20:53:16.429; msi: LOGGED OUT
+2023-01-22 20:53:16.429; msi2: Session expired
+2023-01-22 20:53:16.429; msi2: Logging out
+2023-01-22 20:53:16.429; msi2: LOGGED OUT
+2023-01-22 20:53:16.441; msi2 [127.0.0.1]: Login check
+2023-01-22 20:53:16.441; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 20:53:16.451; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 20:53:29.139; msi [127.0.0.1]: Logout check
+2023-01-22 20:53:32.842; msi2 [127.0.0.1]: Logout check
+2023-01-22 20:53:32.842; msi2: Logging out
+2023-01-22 20:53:32.842; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 20:53:32.842; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 20:54:03.285; msi [127.0.0.1]: Login check
+2023-01-22 20:54:03.286; msi [127.0.0.1]: LOGGED IN
+2023-01-22 20:54:03.289; msi [127.0.0.1]: Login check
+2023-01-22 20:54:03.293; msi [127.0.0.1]: HOST START
+2023-01-22 20:54:13.808; msi2 [127.0.0.1]: Login check
+2023-01-22 20:54:13.809; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 20:54:13.813; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 20:54:15.734; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 20:58:23.816; msi2 [127.0.0.1]: Logout check
+2023-01-22 20:58:23.817; msi2: Logging out
+2023-01-22 20:58:23.817; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 20:59:45.617; msi [127.0.0.1]: Logout check
+2023-01-22 20:59:45.617; msi: Logging out
+2023-01-22 20:59:45.618; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 20:59:45.619; msi2: Session expired
+2023-01-22 21:00:04.603; msi [127.0.0.1]: Login check
+2023-01-22 21:00:04.603; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:00:04.636; msi [127.0.0.1]: Login check
+2023-01-22 21:00:04.646; msi [127.0.0.1]: HOST START
+2023-01-22 21:01:18.084; msi [127.0.0.1]: Login check
+2023-01-22 21:01:18.085; msi: Logging out
+2023-01-22 21:01:18.085; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:01:18.113; msi [127.0.0.1]: Login check
+2023-01-22 21:01:18.124; msi [127.0.0.1]: HOST START
+2023-01-22 21:06:36.875; msi [127.0.0.1]: Logout check
+2023-01-22 21:06:36.875; msi: Logging out
+2023-01-22 21:06:36.876; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 21:06:36.877; msi: Session expired
+2023-01-22 21:11:36.067; msi: Session expired
+2023-01-22 21:11:36.068; msi: Session expired
+2023-01-22 21:11:36.068; msi: Session expired
+2023-01-22 21:11:36.069; msi [127.0.0.1]: Login check
+2023-01-22 21:11:36.070; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:11:36.073; msi [127.0.0.1]: Login check
+2023-01-22 21:11:36.078; msi [127.0.0.1]: HOST START
+2023-01-22 21:11:42.822; msi [127.0.0.1]: Logout check
+2023-01-22 21:11:42.823; msi: Logging out
+2023-01-22 21:11:42.823; msi [127.0.0.1]: LOGGED OUT
+2023-01-22 21:11:50.667; msi [127.0.0.1]: Login check
+2023-01-22 21:11:50.667; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:11:50.690; msi [127.0.0.1]: Login check
+2023-01-22 21:11:50.696; msi [127.0.0.1]: HOST START
+2023-01-22 21:13:58.737; msi [127.0.0.1]: Login check
+2023-01-22 21:13:58.737; msi: Logging out
+2023-01-22 21:13:58.737; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:13:58.767; msi [127.0.0.1]: Login check
+2023-01-22 21:13:58.769; msi [127.0.0.1]: HOST START
+2023-01-22 21:14:23.063; msi2 [127.0.0.1]: Login check
+2023-01-22 21:14:23.064; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 21:14:23.072; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 21:14:24.913; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 21:14:25.449; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 21:14:45.663; msi: Session expired
+2023-01-22 21:14:45.663; msi: 1 Sessions left
+2023-01-22 21:17:57.593; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 21:18:04.677; msi2 [127.0.0.1]: Logout check
+2023-01-22 21:18:04.677; msi2: Logging out
+2023-01-22 21:18:04.678; msi2 [127.0.0.1]: LOGGED OUT
+2023-01-22 21:18:04.678; msi2 [127.0.0.1]: (GET) User logged out
+2023-01-22 21:18:23.035; msi [127.0.0.1]: Login check
+2023-01-22 21:18:23.035; msi: Logging out
+2023-01-22 21:18:23.036; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:18:23.064; msi [127.0.0.1]: Login check
+2023-01-22 21:18:23.066; msi [127.0.0.1]: HOST START
+2023-01-22 21:18:27.263; msi2 [127.0.0.1]: Login check
+2023-01-22 21:18:27.263; msi2 [127.0.0.1]: LOGGED IN
+2023-01-22 21:18:27.271; msi2 [127.0.0.1]: CONTROL START
+2023-01-22 21:18:29.287; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 21:18:29.834; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 21:18:50.003; msi: Session expired
+2023-01-22 21:18:50.003; msi: 1 Sessions left
+2023-01-22 21:21:50.088; msi: Session expired
+2023-01-22 21:22:10.103; msi: Session expired
+2023-01-22 21:22:10.103; msi: Session expired
+2023-01-22 21:23:15.661; msi [127.0.0.1]: Login check
+2023-01-22 21:23:15.662; msi: Logging out
+2023-01-22 21:23:15.662; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 21:23:15.663; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:23:15.693; msi [127.0.0.1]: Login check
+2023-01-22 21:23:15.693; msi [127.0.0.1]: HOST START
+2023-01-22 21:23:31.155; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 21:23:51.175; msi: Session expired
+2023-01-22 21:23:51.175; msi: 1 Sessions left
+2023-01-22 21:24:31.184; msi: Session expired
+2023-01-22 21:28:31.278; msi: Session expired
+2023-01-22 21:33:31.372; msi2: Session expired
+2023-01-22 21:33:31.372; msi2: 1 Sessions left
+2023-01-22 21:33:31.372; msi: Session expired
+2023-01-22 21:33:31.372; msi: Logging out
+2023-01-22 21:33:31.372; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 21:33:31.372; msi: LOGGED OUT
+2023-01-22 21:37:32.569; msi [127.0.0.1]: Login check
+2023-01-22 21:37:32.569; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:37:32.593; msi [127.0.0.1]: Login check
+2023-01-22 21:37:32.597; msi [127.0.0.1]: HOST START
+2023-01-22 21:38:02.381; msi [127.0.0.1]: Login check
+2023-01-22 21:38:02.381; msi: Logging out
+2023-01-22 21:38:02.381; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:38:02.411; msi [127.0.0.1]: Login check
+2023-01-22 21:38:02.413; msi [127.0.0.1]: HOST START
+2023-01-22 21:38:22.197; msi [127.0.0.1]: Login check
+2023-01-22 21:38:22.198; msi: Logging out
+2023-01-22 21:38:22.198; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:38:22.219; msi [127.0.0.1]: Login check
+2023-01-22 21:38:22.225; msi [127.0.0.1]: HOST START
+2023-01-22 21:38:31.137; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 21:38:31.677; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 21:38:51.702; msi: Session expired
+2023-01-22 21:38:51.702; msi: 1 Sessions left
+2023-01-22 21:45:40.351; msi [127.0.0.1]: Login check
+2023-01-22 21:45:40.351; msi: Logging out
+2023-01-22 21:45:40.351; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 21:45:40.351; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:45:40.386; msi [127.0.0.1]: Login check
+2023-01-22 21:45:40.391; msi [127.0.0.1]: HOST START
+2023-01-22 21:45:47.607; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 21:46:07.622; msi: Session expired
+2023-01-22 21:46:07.622; msi: 1 Sessions left
+2023-01-22 21:47:47.661; msi: Session expired
+2023-01-22 21:47:47.661; msi: Session expired
+2023-01-22 21:48:07.670; msi: Session expired
+2023-01-22 21:48:07.670; msi: Session expired
+2023-01-22 21:48:47.683; msi: Session expired
+2023-01-22 21:55:47.896; msi2: Session expired
+2023-01-22 21:55:47.896; msi2: 1 Sessions left
+2023-01-22 21:55:47.896; msi: Session expired
+2023-01-22 21:55:47.896; msi: Logging out
+2023-01-22 21:55:47.896; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 21:55:47.896; msi: LOGGED OUT
+2023-01-22 21:59:59.011; msi [127.0.0.1]: Login check
+2023-01-22 21:59:59.011; msi [127.0.0.1]: LOGGED IN
+2023-01-22 21:59:59.031; msi [127.0.0.1]: Login check
+2023-01-22 21:59:59.039; msi [127.0.0.1]: HOST START
+2023-01-22 22:00:10.296; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 22:00:10.874; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:00:30.896; msi: Session expired
+2023-01-22 22:00:30.896; msi: 1 Sessions left
+2023-01-22 22:06:55.217; msi [127.0.0.1]: Login check
+2023-01-22 22:06:55.217; msi: Logging out
+2023-01-22 22:06:55.218; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:06:55.218; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:06:55.241; msi [127.0.0.1]: Login check
+2023-01-22 22:06:55.248; msi [127.0.0.1]: HOST START
+2023-01-22 22:07:01.668; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:07:21.688; msi: Session expired
+2023-01-22 22:07:21.688; msi: 1 Sessions left
+2023-01-22 22:10:21.769; msi: Session expired
+2023-01-22 22:11:49.355; msi [127.0.0.1]: Login check
+2023-01-22 22:11:49.355; msi: Logging out
+2023-01-22 22:11:49.355; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:11:49.356; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:11:49.380; msi [127.0.0.1]: Login check
+2023-01-22 22:11:49.384; msi [127.0.0.1]: HOST START
+2023-01-22 22:11:57.590; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:12:12.793; msi [127.0.0.1]: Login check
+2023-01-22 22:12:12.794; msi: Logging out
+2023-01-22 22:12:12.794; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:12:12.794; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:12:12.817; msi [127.0.0.1]: Login check
+2023-01-22 22:12:12.822; msi [127.0.0.1]: HOST START
+2023-01-22 22:12:18.684; msi: Session expired
+2023-01-22 22:12:19.230; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:12:39.258; msi: Session expired
+2023-01-22 22:12:39.258; msi: 1 Sessions left
+2023-01-22 22:17:19.384; msi: Session expired
+2023-01-22 22:17:39.378; msi [127.0.0.1]: Login check
+2023-01-22 22:17:39.378; msi: Logging out
+2023-01-22 22:17:39.379; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:17:39.379; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:17:39.404; msi [127.0.0.1]: Login check
+2023-01-22 22:17:39.408; msi [127.0.0.1]: HOST START
+2023-01-22 22:17:42.873; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:18:02.888; msi: Session expired
+2023-01-22 22:18:02.888; msi: 1 Sessions left
+2023-01-22 22:22:02.977; msi: Session expired
+2023-01-22 22:22:22.989; msi: Session expired
+2023-01-22 22:26:18.658; msi [127.0.0.1]: Login check
+2023-01-22 22:26:18.659; msi: Logging out
+2023-01-22 22:26:18.659; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:26:18.660; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:26:18.682; msi [127.0.0.1]: Login check
+2023-01-22 22:26:18.689; msi [127.0.0.1]: HOST START
+2023-01-22 22:26:23.123; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:26:43.142; msi: Session expired
+2023-01-22 22:26:43.142; msi: 1 Sessions left
+2023-01-22 22:27:43.177; msi: Session expired
+2023-01-22 22:28:26.856; msi [127.0.0.1]: Login check
+2023-01-22 22:28:26.856; msi: Logging out
+2023-01-22 22:28:26.857; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:28:26.857; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:28:26.887; msi [127.0.0.1]: Login check
+2023-01-22 22:28:26.891; msi [127.0.0.1]: HOST START
+2023-01-22 22:28:31.532; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:28:51.551; msi: Session expired
+2023-01-22 22:28:51.551; msi: 1 Sessions left
+2023-01-22 22:29:20.540; msi [127.0.0.1]: Login check
+2023-01-22 22:29:20.540; msi: Logging out
+2023-01-22 22:29:20.540; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:29:20.540; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:29:20.583; msi [127.0.0.1]: Login check
+2023-01-22 22:29:20.588; msi [127.0.0.1]: HOST START
+2023-01-22 22:29:27.309; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:29:47.325; msi: Session expired
+2023-01-22 22:29:47.325; msi: 1 Sessions left
+2023-01-22 22:36:27.519; msi: Session expired
+2023-01-22 22:38:47.588; msi: Session expired
+2023-01-22 22:39:27.594; msi2: Session expired
+2023-01-22 22:39:27.594; msi2: 1 Sessions left
+2023-01-22 22:39:27.595; msi: Session expired
+2023-01-22 22:39:27.595; msi: Logging out
+2023-01-22 22:39:27.596; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:39:27.596; msi: LOGGED OUT
+2023-01-22 22:41:13.977; msi [127.0.0.1]: Login check
+2023-01-22 22:41:13.977; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:41:14.001; msi [127.0.0.1]: Login check
+2023-01-22 22:41:14.007; msi [127.0.0.1]: HOST START
+2023-01-22 22:41:17.446; msi2 [127.0.0.1]: Re-Login check
+2023-01-22 22:41:18.009; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:41:38.023; msi: Session expired
+2023-01-22 22:41:38.023; msi: 1 Sessions left
+2023-01-22 22:46:29.577; msi [127.0.0.1]: Login check
+2023-01-22 22:46:29.577; msi: Logging out
+2023-01-22 22:46:29.577; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:46:29.577; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:46:29.617; msi [127.0.0.1]: Login check
+2023-01-22 22:46:29.617; msi [127.0.0.1]: HOST START
+2023-01-22 22:46:36.850; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:46:56.873; msi: Session expired
+2023-01-22 22:46:56.873; msi: 1 Sessions left
+2023-01-22 22:47:31.616; msi [127.0.0.1]: Login check
+2023-01-22 22:47:31.616; msi: Logging out
+2023-01-22 22:47:31.617; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:47:31.617; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:47:31.641; msi [127.0.0.1]: Login check
+2023-01-22 22:47:31.648; msi [127.0.0.1]: HOST START
+2023-01-22 22:47:36.322; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:47:56.339; msi: Session expired
+2023-01-22 22:47:56.339; msi: 1 Sessions left
+2023-01-22 22:51:36.471; msi: Session expired
+2023-01-22 22:55:54.079; msi [127.0.0.1]: Login check
+2023-01-22 22:55:54.080; msi: Logging out
+2023-01-22 22:55:54.080; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:55:54.081; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:55:54.102; msi [127.0.0.1]: Login check
+2023-01-22 22:55:54.111; msi [127.0.0.1]: HOST START
+2023-01-22 22:55:59.797; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:56:19.808; msi: Session expired
+2023-01-22 22:56:19.808; msi: 1 Sessions left
+2023-01-22 22:56:39.815; msi: Session expired
+2023-01-22 22:57:39.829; msi: Session expired
+2023-01-22 22:59:10.238; msi [127.0.0.1]: Login check
+2023-01-22 22:59:10.238; msi: Logging out
+2023-01-22 22:59:10.238; msi [127.0.0.1]: Stopped "idesk" with Control <msi2>
+2023-01-22 22:59:10.238; msi [127.0.0.1]: LOGGED IN
+2023-01-22 22:59:10.274; msi [127.0.0.1]: Login check
+2023-01-22 22:59:10.278; msi [127.0.0.1]: HOST START
+2023-01-22 22:59:14.605; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 22:59:34.629; msi: Session expired
+2023-01-22 22:59:34.629; msi: 1 Sessions left
+2023-01-22 22:59:39.867; msi [127.0.0.1]: Re-Login check
+2023-01-22 22:59:39.867; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 22:59:39.867; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 23:00:20.078; msi: Session expired
+2023-01-22 23:00:20.078; msi: 1 Sessions left
+2023-01-22 23:06:00.220; msi: Session expired
+2023-01-22 23:07:18.812; msi [127.0.0.1]: Login check
+2023-01-22 23:07:18.812; msi: Logging out
+2023-01-22 23:07:18.812; msi [127.0.0.1]: Stopped "desk" with Control <msi2>
+2023-01-22 23:07:18.813; msi [127.0.0.1]: LOGGED IN
+2023-01-22 23:07:18.862; msi [127.0.0.1]: Login check
+2023-01-22 23:07:18.862; msi [127.0.0.1]: HOST START
+2023-01-22 23:07:22.599; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 23:07:42.617; msi: Session expired
+2023-01-22 23:07:42.617; msi: 1 Sessions left
+2023-01-22 23:07:44.004; msi [127.0.0.1]: Re-Login check
+2023-01-22 23:07:44.004; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 23:07:44.004; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 23:08:24.230; msi: Session expired
+2023-01-22 23:08:24.230; msi: 1 Sessions left
+2023-01-22 23:09:44.254; msi: Session expired
+2023-01-22 23:11:07.046; msi [127.0.0.1]: Login check
+2023-01-22 23:11:07.047; msi: Logging out
+2023-01-22 23:11:07.047; msi [127.0.0.1]: Stopped "desk" with Control <msi2>
+2023-01-22 23:11:07.047; msi [127.0.0.1]: LOGGED IN
+2023-01-22 23:11:07.075; msi [127.0.0.1]: Login check
+2023-01-22 23:11:07.079; msi [127.0.0.1]: HOST START
+2023-01-22 23:11:12.008; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 23:11:12.158; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 23:11:12.158; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 23:11:32.449; msi: Session expired
+2023-01-22 23:11:32.449; msi: 1 Sessions left
+2023-01-22 23:12:00.271; msi [127.0.0.1]: Re-Login check
+2023-01-22 23:12:32.482; msi: Session expired
+2023-01-22 23:12:32.482; msi: 1 Sessions left
+2023-01-22 23:15:12.408; msi [127.0.0.1]: Login check
+2023-01-22 23:15:12.409; msi: Logging out
+2023-01-22 23:15:12.409; msi [127.0.0.1]: Stopped "desk" with Control <msi2>
+2023-01-22 23:15:12.410; msi [127.0.0.1]: LOGGED IN
+2023-01-22 23:15:12.438; msi [127.0.0.1]: Login check
+2023-01-22 23:15:12.440; msi [127.0.0.1]: HOST START
+2023-01-22 23:15:17.209; msi [127.0.0.1]: Opened "idesk" for Control <msi2>
+2023-01-22 23:15:37.218; msi: Session expired
+2023-01-22 23:15:37.218; msi: 1 Sessions left
+2023-01-22 23:17:57.265; msi: Session expired
+2023-01-22 23:22:17.371; msi: Session expired
+2023-01-22 23:24:31.270; msi [127.0.0.1]: Opened "desk" for Control <msi2>
+2023-01-22 23:24:31.270; msi [127.0.0.1]: Closed "idesk" for Control <msi2>
+2023-01-22 23:34:51.701; msi: Session expired
+2023-01-22 23:34:51.701; msi: Logging out
+2023-01-22 23:34:51.701; msi [127.0.0.1]: Stopped "desk" with Control <msi2>
+2023-01-22 23:34:51.701; msi: LOGGED OUT
+2023-01-22 23:36:11.749; msi2: Session expired
+2023-01-22 23:36:11.749; msi2: 1 Sessions left

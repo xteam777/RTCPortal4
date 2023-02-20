@@ -12,7 +12,7 @@ uses
   Windows, Messages, SysUtils, Classes,
   Graphics, Controls, Forms, Dialogs, ExtCtrls,
 
-  rtcScrCapture;
+  rtcScreenEncoder;//Capture;
 
 type
   TdmSelectRegion = class(TForm)

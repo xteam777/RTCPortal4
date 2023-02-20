@@ -498,10 +498,6 @@ object MainForm: TMainForm
       object Page_Hosting: TTabSheet
         Caption = 'Hosting'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Label9: TLabel
           Left = 36
           Top = 8
@@ -635,7 +631,7 @@ object MainForm: TMainForm
       Top = 6
       Width = 150
       Height = 16
-      Caption = 'RTC Portal Host v4.09'
+      Caption = 'RTC Portal Host v4.10'
       Color = clBtnFace
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack

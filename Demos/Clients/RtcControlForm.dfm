@@ -42,6 +42,8 @@ object MainForm: TMainForm
         Left = 0
         Top = 0
         Caption = 'PageStart'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
       end
       object TPage
         Left = 0
@@ -60,10 +62,6 @@ object MainForm: TMainForm
       TabStop = False
       object Page_Setup: TTabSheet
         Caption = 'Setup'
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Label12: TLabel
           Left = 16
           Top = 178
@@ -372,10 +370,6 @@ object MainForm: TMainForm
       object Page_Control: TTabSheet
         Caption = 'Control'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         DesignSize = (
           271
           338)
@@ -714,7 +708,7 @@ object MainForm: TMainForm
       Top = 6
       Width = 170
       Height = 16
-      Caption = 'RTC Portal Control v4.09'
+      Caption = 'RTC Portal Control v4.10'
       Color = clBtnFace
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack

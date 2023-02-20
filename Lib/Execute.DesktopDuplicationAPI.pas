@@ -13,12 +13,15 @@ uses
   DX12.DXGI,
   DX12.DXGI1_2,
   Vcl.Graphics,
-  Math;
+  Math,
+  SysUtils;
 //  , rtcLog, SysUtils;
 
+//const TempBuffLen = 10000;
 type
 {$POINTERMATH ON} // Pointer[x]
   TDesktopDuplicationWrapper = class
+  const TempBuffLen = 100000;
   private
     FError: HRESULT;
   // D3D11
@@ -30,25 +33,44 @@ type
     FDuplicate: IDXGIOutputDuplication;
     FTexture: ID3D11Texture2D;
   // update information
-    FMetaData: array of Byte;
-    FMoveRects: PDXGI_OUTDUPL_MOVE_RECT; // array of
+   // FMetaData: array of Byte;
+    {FMoveRects: PDXGI_OUTDUPL_MOVE_RECT; // array of
     FMoveCount: Integer;
     FDirtyRects: PRECT; // array of
     FDirtyCount: Integer;
+     }
 
-    BytesInRow : integer;
-    BitmapP1, BitmapP2 : PByte;
-    FirstDraw : boolean;
-    FLastChangedX1, FLastChangedY1, FLastChangedX2, FLastChangedY2: Integer;
-    procedure DrawArea(X1, Y1, X2, Y2 : Integer; aPixelFormat: TPixelFormat); //inline;
+   // PixelFormat : TPixelFormat;
+    FScreenWidth, FScreenHeight, FBitsPerPixel : Integer;
+    FScreenInfoChanged : Boolean;
+
+    FClipRect : TRect;
+
+    FScreenBuff : PByte;
+
+    FChangedRectsCnt : integer;
+    FChangedRects : array [0..100000] of TRect;
+
+
+    TempBuff : array [0..TempBuffLen] of byte;
+    // BytesInRow : integer;
+    //BitmapP1, BitmapP2 : PByte;
+    // FLastChangedX1, FLastChangedY1, FLastChangedX2, FLastChangedY2: Integer;
+    //procedure DrawArea(X1, Y1, X2, Y2 : Integer; aPixelFormat: TPixelFormat); //inline;
+
+    function RecieveRects : Boolean;
+    procedure CheckScreenInfo(Desc : PD3D11_TEXTURE2D_DESC);
+
+    function GetChangedRect(const RectId : integer) : TRect;
+//    procedure SetClipRect(const Rect : TRect);
 
   public
-    Bitmap: TBitmap;
-    OptimDrawAlg : integer; // 0 - default, 1 - draw algorithm #1, 2 - draw algorithm #2
+   // Bitmap: TBitmap;
+    //OptimDrawAlg : integer; // 0 - default, 1 - draw algorithm #1, 2 - draw algorithm #2
     constructor Create(var fCreated: Boolean);
     destructor Destroy; override;
     function GetFrame(var fNeedRecreate: Boolean): Boolean;
-    function DrawFrame(var Bitmap: TBitmap; aPixelFormat: TPixelFormat = pf32bit): Boolean;
+   // function DrawFrame(var Bitmap: TBitmap; aPixelFormat: TPixelFormat = pf32bit): Boolean;
 //    function DrawFrameToDib(pBits: PByte): Boolean;
 //    procedure FreeDIB(BitmapInfo: PBitmapInfo;
 //      InfoSize: DWORD;
@@ -60,14 +82,25 @@ type
 //      var Bits: pointer;
 //      var ImageSize: DWORD);
     property Error: HRESULT read FError;
-    property MoveCount: Integer read FMoveCount;
+  {  property MoveCount: Integer read FMoveCount;
     property MoveRects: PDXGI_OUTDUPL_MOVE_RECT read FMoveRects;
     property DirtyCount: Integer read FDirtyCount;
     property DirtyRects: PRect read FDirtyRects;
     property LastChangedX1: Integer read FLastChangedX1;
     property LastChangedY1: Integer read FLastChangedY1;
     property LastChangedX2: Integer read FLastChangedX2;
-    property LastChangedY2: Integer read FLastChangedY2;
+    property LastChangedY2: Integer read FLastChangedY2; }
+    property ScreenWidth : Integer read FScreenWidth;
+    property ScreenHeight : Integer read FScreenHeight;
+    property BitsPerPixel : Integer read FBitsPerPixel;
+    property ScreenInfoChanged : Boolean read FScreenInfoChanged;
+
+   // property BytesPerPixel : Integer read FBytesPerPixel;
+    property ClipRect : TRect read FClipRect write FClipRect;
+
+    property ScreenBuff : PByte read FScreenBuff;
+    property ChangedRectsCnt : Integer read FChangedRectsCnt;
+    property ChangedRects[const RectId : Integer] : TRect read GetChangedRect;
   end;
 
 implementation
@@ -95,12 +128,12 @@ var
   GO: IDXGIOutput;
   O1: IDXGIOutput1;
 begin
+  FClipRect := TRect.Create(0, 0, 0, 0);
+
   fCreated := False;
 
-  OptimDrawAlg := 3;
-
-  FirstDraw := True;
-
+  fTexture := NIL;
+ 
 //  Sleep(10000);
   FError := D3D11CreateDevice(
     nil, // Default adapter
@@ -176,18 +209,143 @@ begin
   inherited;
 
   if FTexture <> nil then
+  begin
+    FContext.Unmap(FTexture, 0); //Это нужно?
     FTexture := nil;
+    FDuplicate.ReleaseFrame;
+  end;
 
-  if Bitmap <> nil then
-    Bitmap.Free;
+ // if Bitmap <> nil then
+  //  Bitmap.Free;
 end;
+
+function TDesktopDuplicationWrapper.RecieveRects : Boolean;
+var
+  i, j, S1, S2, SU, SI : Integer;
+  BytesRecieved : UInt;
+  RctU, RctI : TRect;
+  PMoveRect : PDXGI_OUTDUPL_MOVE_RECT;
+  PDirtyRect : PRECT;
+begin
+  Result := false;
+  FError := FDuplicate.GetFrameMoveRects(TempBuffLen,
+        PDXGI_OUTDUPL_MOVE_RECT(@TempBuff[0]), BytesRecieved);
+  if Failed(FError) then exit;
+
+  FChangedRectsCnt := 0;
+
+  // Получаем MoveRects и зансоим их в FChangeRects
+  for i := 0 to BytesRecieved div SizeOf(TDXGI_OUTDUPL_MOVE_RECT) - 1 do
+  begin
+    PMoveRect := PDXGI_OUTDUPL_MOVE_RECT(@TempBuff[0]) + i;
+    FChangedRects[FChangedRectsCnt] := TRect.Create(TPoint.Create(PMoveRect.SourcePoint.X, PMoveRect.SourcePoint.Y),
+    PMoveRect.DestinationRect.Right - PMoveRect.DestinationRect.Left,
+    PMoveRect.DestinationRect.Bottom - PMoveRect.DestinationRect.Top);
+    FChangedRects[FChangedRectsCnt + 1] := TRect.Create(PMoveRect.DestinationRect.Left, PMoveRect.DestinationRect.Top,
+    PMoveRect.DestinationRect.Right, PMoveRect.DestinationRect.Bottom);
+    Inc(FChangedRectsCnt, 2);
+  end;
+
+
+  // Получаем DirtyRects и зансоим их в FChangeRects
+  FDuplicate.GetFrameDirtyRects(TempBuffLen, PRECT(@TempBuff[0]), BytesRecieved);
+  if Failed(FError) then Exit;
+  for i := 0 to BytesRecieved div SizeOf(TRECT) - 1 do
+  begin
+    PDirtyRect := PRECT(@TempBuff[0]) + i;
+    FChangedRects[FChangedRectsCnt] := TRect.Create(PDirtyRect.Left, PDirtyRect.Top,
+      PDirtyRect.Right, PDirtyRect.Bottom);
+    Inc(FChangedRectsCnt);
+  end;
+
+
+  // Отсекаем части прямоугольников из ChangedRecs, выходящие за ClipRect
+  if (ClipRect.Width <> 0) and (ClipRect.Height <> 0) then
+    for i := 0 to FChangedRectsCnt - 1 do
+      FChangedRects[i] := TRect.Intersect(FChangedRects[i], ClipRect);
+
+
+  // Обьеденяем прямоугольники из ChangedRects если их площадь пересечения велика
+  for i := 0 to FChangedRectsCnt - 1 do
+  begin
+    j := i + 1;
+    while j < FChangedRectsCnt do
+    begin
+      RctU := TRect.Union(FChangedRects[i], FChangedRects[j]);
+      RctI := TRect.Intersect(FChangedRects[i], FChangedRects[j]);
+
+      S1 := FChangedRects[i].Width * FChangedRects[i].Height;
+      S2 := FChangedRects[j].Width * FChangedRects[j].Height;
+      SU := RctU.Width * RctU.Height; SI := RctI.Width * RctI.Height;
+
+      if SU - (S1 + S2) > SI then
+      begin
+        Inc(j);
+        continue; // Площадь пересечения двух прямоугольников мала
+      end;
+          // Площадь пересечения двух прямоугольников велика
+          // Заносим в i-ый прямоугольник прямоугольник обьединения i и j
+          // j-ый прямоугольник удаляем
+      FChangedRects[i] := RctU;
+
+      Move(FChangedRects[j + 1], FChangedRects[j],
+        (FChangedRectsCnt - j - 1) * SizeOf(TRect));
+
+      Dec(FChangedRectsCnt);
+    end;
+  end;
+  Result := true;
+end;
+
+procedure TDesktopDuplicationWrapper.CheckScreenInfo(Desc: PD3D11_TEXTURE2D_DESC);
+var
+  NewBitsPerPixel : Integer;
+begin
+  FScreenInfoChanged := false;
+
+  if FScreenWidth <> Desc.Width then
+  begin
+    FScreenWidth := Desc.Width;
+    FScreenInfoChanged := true;
+  end;
+
+  if FScreenHeight <> Desc.Height then
+  begin
+    FScreenHeight := Desc.Height;
+    FScreenInfoChanged := true;
+  end;
+
+  case Desc.Format of
+    DXGI_FORMAT_R8G8B8A8_TYPELESS,
+    DXGI_FORMAT_R8G8B8A8_UNORM,
+    DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
+    DXGI_FORMAT_R8G8B8A8_UINT,
+    DXGI_FORMAT_R8G8B8A8_SNORM,
+    DXGI_FORMAT_R8G8B8A8_SINT,
+    DXGI_FORMAT_B8G8R8A8_UNORM,
+    DXGI_FORMAT_B8G8R8X8_UNORM,
+    DXGI_FORMAT_B8G8R8A8_TYPELESS,
+    DXGI_FORMAT_B8G8R8A8_UNORM_SRGB,
+    DXGI_FORMAT_B8G8R8X8_TYPELESS,
+    DXGI_FORMAT_B8G8R8X8_UNORM_SRGB : NewBitsPerPixel := 32;
+  end;
+  if FBitsPerPixel <> NewBitsPerPixel then
+  begin
+    FBitsPerPixel := NewBitsPerPixel;
+    FScreenInfoChanged := true;
+  end;
+
+end;
+
 
 function TDesktopDuplicationWrapper.GetFrame(var fNeedRecreate: Boolean): Boolean;
 var
   FrameInfo: TDXGI_OUTDUPL_FRAME_INFO;
   DesktopResource: IDXGIResource;
-  BufLen : Integer;
-  BufSize: Uint;
+  Desc: TD3D11_TEXTURE2D_DESC;
+  Temp: ID3D11Texture2D;
+  Resource: TD3D11_MAPPED_SUBRESOURCE;
+ // BufLen : Integer;
 begin
   Result := False;
   fNeedRecreate := False;
@@ -225,34 +383,79 @@ begin
     Exit;
   end;
 
+  FTexture.GetDesc(Desc);
+
+  Desc.BindFlags := 0;
+  Desc.CPUAccessFlags := Ord(D3D11_CPU_ACCESS_READ) or Ord(D3D11_CPU_ACCESS_WRITE);
+  Desc.Usage := D3D11_USAGE_STAGING;
+  Desc.MiscFlags := 0;
+
+
+  //  READ/WRITE texture
+  FError := FDevice.CreateTexture2D(@Desc, nil, Temp);
+  if Failed(FError) then
+  begin
+//    xLog('CreateTexture2D Error: ' + SysErrorMessage(FError));
+    FTexture := nil;
+    FDuplicate.ReleaseFrame;
+
+    Exit;
+  end;
+
+  // copy original to the RW texture
+  FContext.CopyResource(Temp, FTexture);
+
+  // get texture bits
+  FContext.Map(Temp, 0, D3D11_MAP_READ_WRITE, 0, Resource);
+
+  CheckScreenInfo(@Desc);
+
   if FrameInfo.TotalMetadataBufferSize > 0 then
   begin
-    BufLen := FrameInfo.TotalMetadataBufferSize;
-    if Length(FMetaData) < BufLen then
-      SetLength(FMetaData, BufLen);
+    if FScreenInfoChanged then
+    begin
+      FChangedRectsCnt := 1;
+      FChangedRects[0] := TRect.Create(0, 0, FScreenWidth, FScreenHeight);
+      if (ClipRect.Width <> 0) and (ClipRect.Height <> 0) then
+        FChangedRects[0] := TRect.Intersect(FChangedRects[0], ClipRect);
+      Result := true;
+    end else Result := RecieveRects;
+      {BufLen := FrameInfo.TotalMetadataBufferSize;
+      if Length(FMetaData) < BufLen then
+        SetLength(FMetaData, BufLen);
 
-    FMoveRects := Pointer(FMetaData);
+      FMoveRects := Pointer(FMetaData);
 
-    FError := FDuplicate.GetFrameMoveRects(BufLen, FMoveRects, BufSize);
-    if Failed(FError) then
-      Exit;
-    FMoveCount := BufSize div sizeof(TDXGI_OUTDUPL_MOVE_RECT);
+      FError := FDuplicate.GetFrameMoveRects(BufLen, FMoveRects, BufSize);
+      if Failed(FError) then
+        Exit;
+      FMoveCount := BufSize div sizeof(TDXGI_OUTDUPL_MOVE_RECT);
 
-    FDirtyRects := @FMetaData[BufSize];
-    Dec(BufLen, BufSize);
+      FDirtyRects := @FMetaData[BufSize];
+      Dec(BufLen, BufSize);
 
-    FError := FDuplicate.GetFrameDirtyRects(BufLen, FDirtyRects, BufSize);
-    if Failed(FError) then
-     Exit;
-    FDirtyCount := BufSize div SizeOf(TRECT);
-
-    Result := True;
-  end
-  else
+      FError := FDuplicate.GetFrameDirtyRects(BufLen, FDirtyRects, BufSize);
+      if Failed(FError) then
+        Exit;
+      FDirtyCount := BufSize div SizeOf(TRECT);}
+  end else
+  begin
     FDuplicate.ReleaseFrame;
+    exit;
+  end;
+
+  FScreenBuff := Resource.pData;
+
+ // Result := true;
 end;
 
-procedure TDesktopDuplicationWrapper.DrawArea(X1, Y1, X2, Y2 : Integer; aPixelFormat: TPixelFormat); //inline;
+
+function TDesktopDuplicationWrapper.GetChangedRect(const RectId : integer) : TRect;
+begin
+  Result := FChangedRects[RectId];
+end;
+
+{procedure TDesktopDuplicationWrapper.DrawArea(X1, Y1, X2, Y2 : Integer; aPixelFormat: TPixelFormat); //inline;
 var
   i, BytesToCopy : integer;
   P1Cur, P2Cur : PByte;
@@ -263,14 +466,16 @@ begin
   if (((X2 - X1) * GetBitsPerPixel(aPixelFormat) mod 8) <> 0) then
     Inc(BytesToCopy);
 
+
   for i := Y1 to Y2 - 1 do
   begin
     Move(P1Cur^, P2Cur^, BytesToCopy);
     Inc(P1Cur, BytesInRow);
     Dec(P2Cur, BytesInRow);
   end;
-end;
+end;}
 
+{!!!!!!!!!!!!!!!!!!!!!
 function TDesktopDuplicationWrapper.DrawFrame(var Bitmap: TBitmap; aPixelFormat: TPixelFormat = pf32bit): Boolean;
 var
   Desc: TD3D11_TEXTURE2D_DESC;
@@ -324,7 +529,7 @@ begin
     Inc(BytesInRow);
   BitmapP1 := Resource.pData;
   BitmapP2 := Bitmap.ScanLine[0];
-
+                      }
 {  if FirstDraw
     or ((MoveCount + DirtyCount = 0)) then
   begin
@@ -394,6 +599,7 @@ begin
         end;
     3:  begin}
           // copy pixels - we assume a 32bits bitmap !
+        {!!!!!!!!!!!!!!!!!!!!!!!!!!!
          for i := 0 to Desc.Height - 1 do
           begin
             Move(BitmapP1^, Bitmap.ScanLine[i]^, 4 * Desc.Width);
@@ -408,17 +614,18 @@ begin
           FLastChangedX1 := 0;
           FLastChangedY1 := 0;
           FLastChangedX2 := Desc.Width;
-          FLastChangedY2 := Desc.Height;
+          FLastChangedY2 := Desc.Height; }
       {end;
     end; }
 
+    {!!!!!!!!!!!!!!!!!!!!!!!
   FContext.Unmap(FTexture, 0); //Это нужно?
   FTexture := nil;
   FDuplicate.ReleaseFrame;
 
   Result := True;
 end;
-
+                            }
 //procedure TDesktopDuplicationWrapper.FreeDIB(BitmapInfo: PBitmapInfo;
 //  InfoSize: DWORD;
 //  Bits: pointer;

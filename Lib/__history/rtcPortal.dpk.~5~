@@ -1,0 +1,82 @@
+package rtcPortal;
+
+{$R *.res}
+{$R 'rtcPortalCli.dcr'}
+{$R 'rtcpFileTrans.dcr'}
+{$R 'rtcpChat.dcr'}
+{$R 'rtcpDesktopHost.dcr'}
+{$R 'rtcPortalMod.dcr'}
+{$R 'rtcpDesktopControl.dcr'}
+{$R 'rtcpDesktopControlUI.dcr'}
+{$R 'rtcPortalHttpCli.dcr'}
+{$R 'rtcpCustomComm.dcr'}
+{$R 'rtcpFileExplore.dcr'}
+{$R 'rtcPortalGate.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'RTC Portal v4.09 (2013.Q1)'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  rtcSDK,
+  designide;
+
+contains
+  rtcPortalReg in 'rtcPortalReg.pas',
+  rtcpDesktopControlUI in 'rtcpDesktopControlUI.pas',
+  rtcpFileTransUI in 'rtcpFileTransUI.pas',
+  rtcpDesktopControl in 'rtcpDesktopControl.pas',
+  rtcScrCapture in 'rtcScrCapture.pas',
+  dfmVideoDriver in 'dfmVideoDriver.pas',
+  rtcScrUtils in 'rtcScrUtils.pas',
+  rtcWinLogon in 'rtcWinLogon.pas',
+  rtcpDesktopHost in 'rtcpDesktopHost.pas',
+  rtcPortalMod in 'rtcPortalMod.pas',
+  rtcpFileTrans in 'rtcpFileTrans.pas',
+  rtcPortalCli in 'rtcPortalCli.pas',
+  rtcpChat in 'rtcpChat.pas',
+  rtcpChatUI in 'rtcpChatUI.pas',
+  rtcScrPlayback in 'rtcScrPlayback.pas',
+  rtcPortalHttpCli in 'rtcPortalHttpCli.pas',
+  MouseAInf in 'MouseAInf.pas',
+  rtcpDesktopConst in 'rtcpDesktopConst.pas',
+  rtcpCustomComm in 'rtcpCustomComm.pas',
+  rtcpFileUtils in 'rtcpFileUtils.pas',
+  rtcpFileExplore in 'rtcpFileExplore.pas',
+  rtcTSCli in 'rtcTSCli.pas',
+  rtcPortalGate in 'rtcPortalGate.pas',
+  FastDIB in 'FastDIB.pas',
+  DX12.D3D11 in 'Video\DX12.D3D11.pas',
+  DX12.D3DCommon in 'Video\DX12.D3DCommon.pas',
+  DX12.DXGI in 'Video\DX12.DXGI.pas',
+  DX12.DXGI1_2 in 'Video\DX12.DXGI1_2.pas',
+  libwebp in 'Video\libwebp.pas',
+  rtc_Compress in 'Video\rtc_Compress.pas',
+  rtcCompress in 'Video\rtcCompress.pas',
+  rtcScreenEncoder in 'Video\rtcScreenEncoder.pas';
+
+end.

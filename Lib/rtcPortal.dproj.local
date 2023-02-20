@@ -1,2 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.544,=D:\Projects\RTCPortal4\Lib\Video\DX12.DXGI1_2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.516,=D:\Projects\RTCPortal4\Lib\Video\DX12.D3D11.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.465,D:\Projects\RTCPortal4\Lib\DX12.D3D11.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.177,D:\Projects\RTCPortal4\Lib\DX12.DXGI1_2.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.809,=D:\Projects\RTCPortal4\Lib\Video\WebPCodec.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.526,=D:\Projects\RTCPortal4\Lib\Video\DX12.D3DCommon.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.526,D:\Projects\RTCPortal4\Lib\DX12.D3DCommon.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.504,=D:\Projects\RTCPortal4\Lib\Video\WebPCodec.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.469,D:\Projects\RTCPortal4\Lib\Video\WebPCodec.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.853,D:\Projects\RTCPortal4\Lib\DX12.DXGI.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.565,=D:\Projects\RTCPortal4\Lib\Video\rtc_Compress.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,=D:\Projects\RTCPortal4\Lib\Video\rtcCompress.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.535,=D:\Projects\RTCPortal4\Lib\Video\DX12.DXGI.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.832,=D:\Projects\RTCPortal4\Lib\Video\rtcScreenEncoder.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.046,=D:\Projects\RTCPortal4\Lib\Video\LibWebP.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.732,D:\Projects\RTCPortal4\Lib\Execute.DesktopDuplicationAPI.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.556,=D:\Projects\RTCPortal4\Lib\Video\libwebp.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.346,D:\Projects\RTCPortal4\Lib\Video\libwebp.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.623,D:\Projects\RTCPortal4\Lib\Video\LibWebP.pas=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Video"/>
+    <File Path="Video\DX12.D3D11.pas"/>
+    <File Path="Video\DX12.D3DCommon.pas"/>
+    <File Path="Video\DX12.DXGI.pas"/>
+    <File Path="Video\DX12.DXGI1_2.pas"/>
+    <File Path="Video\rtcCompress.pas"/>
+    <File Path="Video\rtcScreenEncoder.pas"/>
+    <File Path="Video\rtc_Compress.pas"/>
+    <File Path="Video\WebPCodec.pas"/>
+    <File Path="dfmVideoDriver.pas"/>
+    <File Path="FastDIB.pas"/>
+    <File Path="MouseAInf.pas"/>
+    <File Path="rtcpChat.dcr"/>
+    <File Path="rtcpChat.pas"/>
+    <File Path="rtcpChatUI.pas"/>
+    <File Path="rtcpCustomComm.dcr"/>
+    <File Path="rtcpCustomComm.pas"/>
+    <File Path="rtcpDesktopConst.pas"/>
+    <File Path="rtcpDesktopControl.dcr"/>
+    <File Path="rtcpDesktopControl.pas"/>
+    <File Path="rtcpDesktopControlUI.dcr"/>
+    <File Path="rtcpDesktopControlUI.pas"/>
+    <File Path="rtcpDesktopHost.dcr"/>
+    <File Path="rtcpDesktopHost.pas"/>
+    <File Path="rtcpFileExplore.dcr"/>
+    <File Path="rtcpFileExplore.pas"/>
+    <File Path="rtcpFileTrans.dcr"/>
+    <File Path="rtcpFileTrans.pas"/>
+    <File Path="rtcpFileTransUI.pas"/>
+    <File Path="rtcpFileUtils.pas"/>
+    <File Path="rtcPortalCli.dcr"/>
+    <File Path="rtcPortalCli.pas"/>
+    <File Path="rtcPortalGate.dcr"/>
+    <File Path="rtcPortalGate.pas"/>
+    <File Path="rtcPortalHttpCli.dcr"/>
+    <File Path="rtcPortalHttpCli.pas"/>
+    <File Path="rtcPortalMod.dcr"/>
+    <File Path="rtcPortalMod.pas"/>
+    <File Path="rtcPortalReg.pas"/>
+    <File Path="rtcScrCapture.pas"/>
+    <File Path="rtcScrPlayback.pas"/>
+    <File Path="rtcScrUtils.pas"/>
+    <File Path="rtcTSCli.pas"/>
+    <File Path="rtcWinLogon.pas"/>
+    <File Path="designide.dcp"/>
+    <File Path="rtcSDK.dcp"/>
+    <File Path="rtl.dcp"/>
+  </ProjectSortOrder>
+</BorlandProject>
